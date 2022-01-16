@@ -43,11 +43,12 @@ struct BookSearchManager {
             let decodedData = try decoder.decode(BooksData.self, from: bookData)
             var books = [Book]()
             for item in decodedData.items {
+                
                 let title = item.volumeInfo.title
                 let author = item.volumeInfo.authors?[0] ?? "No author"
                 let description = item.volumeInfo.description ?? "No decription"
-                let thumbnail = item.volumeInfo.imageLinks.thumbnail
-                
+                let thumbnail = item.volumeInfo.imageLinks.thumbnail.https()
+
                 let book = Book(title: title, author: author, thumbnail: thumbnail, description: description)
                 print("JSON parsed: \(books)")
                 books.append(book)
@@ -57,5 +58,13 @@ struct BookSearchManager {
             print(error)
             return nil
         }
+    }
+}
+
+// to fix googleapis thumbnail links, which are "http"
+extension String {
+    func https() -> String {
+        guard self.hasPrefix("http:") else { return self }
+        return String("https:\(self.dropFirst(5))")
     }
 }
