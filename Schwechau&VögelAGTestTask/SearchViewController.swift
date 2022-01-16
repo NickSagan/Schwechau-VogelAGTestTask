@@ -8,20 +8,18 @@
 import UIKit
 
 class SearchViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    override func awakeFromNib() {super.awakeFromNib()}
     
     @IBOutlet weak var bookThumbnail: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookAuthor: UILabel!
-
 }
 
 class SearchViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    var booksArray = [Book]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,54 +44,21 @@ class SearchViewController: UITableViewController {
 
         cell.bookTitle.text = "Title on the book #\(indexPath.row)"
         cell.bookAuthor.text = "Author name #\(indexPath.row)"
-        // cell.bookThumbnail =
+        //cell.bookThumbnail.image = UIImage(named: ")
 
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Book #\(indexPath.row) selected")
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+}
 
 //MARK: - SearchBar
-
-}
 
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(searchBar.text ?? "")
     }
-    
 }
