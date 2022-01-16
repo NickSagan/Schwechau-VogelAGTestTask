@@ -47,9 +47,8 @@ class SearchViewController: UITableViewController {
         cell.bookTitle.text = books[indexPath.row].title
         cell.bookAuthor.text = books[indexPath.row].author
         
-        let thumbnailUrl = URL(string: "https://books.google.com/books/content?id=FmyBAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")
-        // books[indexPath.row].thumbnail
-        print(thumbnailUrl) // HTTPS!!!
+        let thumbnailUrl = URL(string: books[indexPath.row].thumbnail)
+        print(thumbnailUrl ?? "thumbnailUrl problem") // HTTPS!!!
 
         DispatchQueue.global().async {
             guard let data = try? Data(contentsOf: thumbnailUrl!) else { return }
