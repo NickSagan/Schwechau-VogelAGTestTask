@@ -21,12 +21,46 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="61g-Kd-c6Y">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="searchCell" id="61g-Kd-c6Y">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="60.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="61g-Kd-c6Y" id="VUx-cz-NGa">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="356" height="60.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4qC-ji-6qO">
+                                            <rect key="frame" x="5" y="5" width="50" height="50.5"/>
+                                            <color key="backgroundColor" systemColor="systemFillColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="1SC-yo-Efi"/>
+                                                <constraint firstAttribute="width" constant="50" id="RBh-cW-j1w"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of the book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-8d-oPM">
+                                            <rect key="frame" x="63" y="11" width="283" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjh-qh-Ofv">
+                                            <rect key="frame" x="63" y="34" width="283" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mjh-qh-Ofv" firstAttribute="leading" secondItem="4qC-ji-6qO" secondAttribute="trailing" constant="8" symbolic="YES" id="3TM-wt-jYp"/>
+                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Mjh-qh-Ofv" secondAttribute="trailing" constant="10" id="5lq-1s-ity"/>
+                                        <constraint firstItem="Spw-8d-oPM" firstAttribute="leading" secondItem="4qC-ji-6qO" secondAttribute="trailing" constant="8" symbolic="YES" id="CZM-82-5EW"/>
+                                        <constraint firstItem="4qC-ji-6qO" firstAttribute="leading" secondItem="VUx-cz-NGa" secondAttribute="leading" constant="5" id="Gk9-Fy-Pl2"/>
+                                        <constraint firstItem="4qC-ji-6qO" firstAttribute="top" secondItem="VUx-cz-NGa" secondAttribute="top" constant="5" id="YGj-iT-Lhy"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mjh-qh-Ofv" secondAttribute="bottom" constant="7" id="bYg-uu-T3l"/>
+                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Spw-8d-oPM" secondAttribute="trailing" constant="10" id="hZJ-SZ-FL7"/>
+                                        <constraint firstAttribute="bottom" secondItem="4qC-ji-6qO" secondAttribute="bottom" constant="5" id="q34-SY-GmL"/>
+                                        <constraint firstItem="Mjh-qh-Ofv" firstAttribute="top" secondItem="Spw-8d-oPM" secondAttribute="bottom" constant="2" id="scf-p0-d3c"/>
+                                        <constraint firstItem="Spw-8d-oPM" firstAttribute="top" secondItem="VUx-cz-NGa" secondAttribute="top" constant="11" id="taw-73-2Sk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -94,6 +128,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
