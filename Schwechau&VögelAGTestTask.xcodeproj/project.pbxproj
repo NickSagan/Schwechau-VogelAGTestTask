@@ -16,6 +16,7 @@
 		9153E2EF27944BDA00E845EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2EE27944BDA00E845EC /* DetailViewController.swift */; };
 		9153E2F3279462E000E845EC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2F2279462E000E845EC /* Book.swift */; };
 		9153E2F5279467E500E845EC /* BookSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2F4279467E500E845EC /* BookSearchManager.swift */; };
+		9153E2FB27946FD100E845EC /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2FA27946FD100E845EC /* Books.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9153E2EE27944BDA00E845EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9153E2F2279462E000E845EC /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		9153E2F4279467E500E845EC /* BookSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchManager.swift; sourceTree = "<group>"; };
+		9153E2FA27946FD100E845EC /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				9153E2F4279467E500E845EC /* BookSearchManager.swift */,
 				9153E2F2279462E000E845EC /* Book.swift */,
+				9153E2FA27946FD100E845EC /* Books.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				9153E2ED27944B9E00E845EC /* SearchViewController.swift in Sources */,
 				9153E2D92794458400E845EC /* AppDelegate.swift in Sources */,
 				9153E2DB2794458400E845EC /* SceneDelegate.swift in Sources */,
+				9153E2FB27946FD100E845EC /* Books.swift in Sources */,
 				9153E2F3279462E000E845EC /* Book.swift in Sources */,
 				9153E2F5279467E500E845EC /* BookSearchManager.swift in Sources */,
 				9153E2EF27944BDA00E845EC /* DetailViewController.swift in Sources */,
