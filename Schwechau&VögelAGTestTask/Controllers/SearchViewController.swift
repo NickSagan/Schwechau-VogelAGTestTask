@@ -61,7 +61,9 @@ class SearchViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Book #\(indexPath.row) selected")
+        let dvc = DetailViewController()
+        dvc.book = books[indexPath.row]
+        navigationController?.pushViewController(dvc, animated: true)
     }
 }
 
