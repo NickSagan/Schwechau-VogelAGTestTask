@@ -10,6 +10,6 @@ import Foundation
 struct Book: Codable {
     var title: String
     var author: String
-    var thumbnail: URL
+    var thumbnail: String
     var description: String
 }
