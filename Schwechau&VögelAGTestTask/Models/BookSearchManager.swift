@@ -17,7 +17,7 @@ struct BookSearchManager {
     private let googleapisUrl = "https://www.googleapis.com/books/v1/volumes?q="
     
     func fetch(bookName: String) {
-        let urlString = googleapisUrl + bookName
+        let urlString = googleapisUrl + bookName.noSpaces()
         print("Fetching: \(urlString)")
         performRequest(with: urlString)
     }
@@ -69,6 +69,7 @@ extension String {
     }
 }
 
+// to fix search requests containing spaces
 extension String {
     func noSpaces() -> String {
         return String(self.map {

@@ -20,9 +20,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         guard let book = book else { return }
 
-        bookTitle.text = book.title
-        bookAuthor.text = book.author
-        bookDescription.text = book.description
+        bookTitle.text = "Title: " + book.title
+        bookAuthor.text = "Author: " + book.author
+        bookDescription.numberOfLines = 0
+        bookDescription.lineBreakMode = .byWordWrapping
+        bookDescription.text = "Description: " + book.description
 
         DispatchQueue.global().async {
             guard let data = try? Data(contentsOf: URL(string: book.thumbnail)!) else { return }
