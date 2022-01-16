@@ -19,9 +19,20 @@ struct BookSearchManager {
     
     private func performRequest(with urlString: String) {
         
+        guard let url = URL(string: urlString) else { return }
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: url) { data, response, error in
+            if error != nil { print(error!); return }
+            guard let safeData = data else { return }
+            guard let book = self.parseJSON(bookData: safeData) else { return }
+            // send books back to VC
+        }
+        task.resume()
+        
+        print("Request performed")
     }
     
-    private func parseJSON() {
+    private func parseJSON(bookData: Data) -> Book? {
         
     }
 }
