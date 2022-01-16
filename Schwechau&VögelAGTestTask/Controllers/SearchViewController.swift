@@ -19,7 +19,7 @@ class SearchViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let bookSearchmanager = BookSearchManager()
+    var bookSearchmanager = BookSearchManager()
     var booksArray = [Book]()
     
     override func viewDidLoad() {
@@ -28,6 +28,7 @@ class SearchViewController: UITableViewController {
         title = "Book Searcher"
         
         searchBar.delegate = self
+        bookSearchmanager.delegate = self
     }
 
     // MARK: - Table view data source
@@ -63,4 +64,14 @@ extension SearchViewController: UISearchBarDelegate {
         guard let userRequest = searchBar.text else { return }
         bookSearchmanager.fetch(bookName: userRequest)
     }
+}
+
+//MARK: - BookSearchManagerDelegate
+
+extension SearchViewController: BookSearchManagerDelegate {
+    
+    func updateBooksList(_ bookSearchManager: BookSearchManager, books: [Book]) {
+        //
+    }
+    
 }

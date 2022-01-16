@@ -7,8 +7,13 @@
 
 import Foundation
 
+protocol BookSearchManagerDelegate {
+    func updateBooksList(_ bookSearchManager: BookSearchManager, books: [Book])
+}
+
 struct BookSearchManager {
     
+    var delegate: BookSearchManagerDelegate?
     private let googleapisUrl = "https://www.googleapis.com/books/v1/volumes?q="
     
     func fetch(bookName: String) {
@@ -25,7 +30,7 @@ struct BookSearchManager {
             if error != nil { print(error!); return }
             guard let safeData = data else { return }
             guard let books = self.parseJSON(bookData: safeData) else { return }
-            // send books back to VC
+            self.delegate?.updateBooksList(self, books: books)
         }
         task.resume()
         
