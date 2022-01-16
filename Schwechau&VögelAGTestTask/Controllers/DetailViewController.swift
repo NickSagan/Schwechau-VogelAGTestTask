@@ -19,6 +19,16 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let book = book else { return }
+
+        bookTitle.text = book.title
+        bookAuthor.text = book.author
+        bookDescription.text = book.description
+
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: URL(string: book.thumbnail)!) else { return }
+            DispatchQueue.main.async {
+                self.thumbnail.image = UIImage(data: data)
+            }
+        }
     }
-    
 }
