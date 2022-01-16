@@ -80,7 +80,9 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let userRequest = searchBar.text else { return }
         bookSearchmanager.fetch(bookName: userRequest)
+        searchBar.resignFirstResponder()
     }
+
 }
 
 //MARK: - BookSearchManagerDelegate
