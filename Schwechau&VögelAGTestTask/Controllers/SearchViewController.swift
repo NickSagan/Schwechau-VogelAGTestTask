@@ -61,10 +61,16 @@ class SearchViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dvc = DetailViewController()
-        dvc.book = books[indexPath.row]
-        navigationController?.pushViewController(dvc, animated: true)
+        performSegue(withIdentifier: "bookDetails", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! DetailViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            dvc.book = books[indexPath.row]
+        }
+    }
+    
 }
 
 //MARK: - SearchBar
@@ -74,7 +80,9 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let userRequest = searchBar.text else { return }
         bookSearchmanager.fetch(bookName: userRequest)
+        searchBar.resignFirstResponder()
     }
+
 }
 
 //MARK: - BookSearchManagerDelegate

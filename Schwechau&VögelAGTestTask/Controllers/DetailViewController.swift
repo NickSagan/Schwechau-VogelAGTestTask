@@ -9,11 +9,26 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var bookDescription: UILabel!
+    @IBOutlet weak var bookAuthor: UILabel!
+    @IBOutlet weak var bookTitle: UILabel!
+    @IBOutlet weak var thumbnail: UIImageView!
+    
     var book: Book?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        guard let book = book else { return }
+
+        bookTitle.text = book.title
+        bookAuthor.text = book.author
+        bookDescription.text = book.description
+
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: URL(string: book.thumbnail)!) else { return }
+            DispatchQueue.main.async {
+                self.thumbnail.image = UIImage(data: data)
+            }
+        }
     }
-    
 }

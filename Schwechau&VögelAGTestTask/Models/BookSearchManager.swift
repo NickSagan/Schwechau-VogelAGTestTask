@@ -68,3 +68,11 @@ extension String {
         return String("https:\(self.dropFirst(5))")
     }
 }
+
+extension String {
+    func noSpaces() -> String {
+        return String(self.map {
+            $0 == " " ? "+" : $0
+        })
+    }
+}
