@@ -16,6 +16,7 @@
 		9153E2EF27944BDA00E845EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2EE27944BDA00E845EC /* DetailViewController.swift */; };
 		9153E2F3279462E000E845EC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2F2279462E000E845EC /* Book.swift */; };
 		9153E2F5279467E500E845EC /* BookSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2F4279467E500E845EC /* BookSearchManager.swift */; };
+		9153E2FB27946FD100E845EC /* BooksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2FA27946FD100E845EC /* BooksData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9153E2EE27944BDA00E845EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9153E2F2279462E000E845EC /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		9153E2F4279467E500E845EC /* BookSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchManager.swift; sourceTree = "<group>"; };
+		9153E2FA27946FD100E845EC /* BooksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +64,51 @@
 		9153E2D72794458400E845EC /* Schwechau&VögelAGTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				9153E2D82794458400E845EC /* AppDelegate.swift */,
-				9153E2DA2794458400E845EC /* SceneDelegate.swift */,
-				9153E2EC27944B9E00E845EC /* SearchViewController.swift */,
-				9153E2EE27944BDA00E845EC /* DetailViewController.swift */,
-				9153E2F4279467E500E845EC /* BookSearchManager.swift */,
-				9153E2F2279462E000E845EC /* Book.swift */,
-				9153E2DE2794458400E845EC /* Main.storyboard */,
+				9153E2F62794698700E845EC /* Models */,
+				9153E2F72794699300E845EC /* View */,
+				9153E2F8279469AB00E845EC /* Controllers */,
+				9153E2F9279469D700E845EC /* Supporting files */,
 				9153E2E12794458700E845EC /* Assets.xcassets */,
-				9153E2E32794458700E845EC /* LaunchScreen.storyboard */,
 				9153E2E62794458700E845EC /* Info.plist */,
 			);
 			path = "Schwechau&VögelAGTestTask";
+			sourceTree = "<group>";
+		};
+		9153E2F62794698700E845EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9153E2F4279467E500E845EC /* BookSearchManager.swift */,
+				9153E2F2279462E000E845EC /* Book.swift */,
+				9153E2FA27946FD100E845EC /* BooksData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9153E2F72794699300E845EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9153E2DE2794458400E845EC /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9153E2F8279469AB00E845EC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9153E2EC27944B9E00E845EC /* SearchViewController.swift */,
+				9153E2EE27944BDA00E845EC /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9153E2F9279469D700E845EC /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				9153E2D82794458400E845EC /* AppDelegate.swift */,
+				9153E2DA2794458400E845EC /* SceneDelegate.swift */,
+				9153E2E32794458700E845EC /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +185,7 @@
 				9153E2ED27944B9E00E845EC /* SearchViewController.swift in Sources */,
 				9153E2D92794458400E845EC /* AppDelegate.swift in Sources */,
 				9153E2DB2794458400E845EC /* SceneDelegate.swift in Sources */,
+				9153E2FB27946FD100E845EC /* BooksData.swift in Sources */,
 				9153E2F3279462E000E845EC /* Book.swift in Sources */,
 				9153E2F5279467E500E845EC /* BookSearchManager.swift in Sources */,
 				9153E2EF27944BDA00E845EC /* DetailViewController.swift in Sources */,

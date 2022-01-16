@@ -19,6 +19,7 @@ class SearchViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let bookSearchmanager = BookSearchManager()
     var booksArray = [Book]()
     
     override func viewDidLoad() {
@@ -59,6 +60,7 @@ class SearchViewController: UITableViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text ?? "")
+        guard let userRequest = searchBar.text else { return }
+        bookSearchmanager.fetch(bookName: userRequest)
     }
 }
