@@ -91,13 +91,55 @@
                     <view key="view" contentMode="scaleToFill" id="MbF-iM-Seo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KRC-Di-cyI">
+                                <rect key="frame" x="142" y="306" width="130" height="285.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-SF-g20">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemFillColor"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cry-fO-AEa">
+                                        <rect key="frame" x="48.5" y="208" width="33" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5Z-xU-6PC">
+                                        <rect key="frame" x="39.5" y="236.5" width="51.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDb-Cs-hWA">
+                                        <rect key="frame" x="21.5" y="265" width="87.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uFx-EA-auS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KRC-Di-cyI" firstAttribute="centerY" secondItem="MbF-iM-Seo" secondAttribute="centerY" id="SLY-fr-h4K"/>
+                            <constraint firstItem="KRC-Di-cyI" firstAttribute="centerX" secondItem="MbF-iM-Seo" secondAttribute="centerX" id="qcV-q6-I0m"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="author" destination="M5Z-xU-6PC" id="For-nd-T83"/>
+                        <outlet property="bookAuthor" destination="M5Z-xU-6PC" id="8Xa-gN-5OS"/>
+                        <outlet property="bookDescription" destination="VDb-Cs-hWA" id="wST-rS-uJu"/>
+                        <outlet property="bookTitle" destination="cry-fO-AEa" id="Mp4-nR-K6L"/>
+                        <outlet property="description" destination="VDb-Cs-hWA" id="1qh-hY-USS"/>
+                        <outlet property="thumbnail" destination="kfc-SF-g20" id="XMS-63-ppT"/>
+                        <outlet property="title" destination="cry-fO-AEa" id="SOG-eS-9ml"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIa-H0-pNz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="-17"/>
+            <point key="canvasLocation" x="1854" y="-17"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oVe-mX-1i6">
@@ -114,6 +156,10 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8n-Y7-KlO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="iWG-1H-8Vm">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </objects>
             <point key="canvasLocation" x="82.608695652173921" y="-17.410714285714285"/>
         </scene>
