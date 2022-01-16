@@ -7,12 +7,26 @@
 
 import UIKit
 
+class SearchViewCell: UITableViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    @IBOutlet weak var bookThumbnail: UIImageView!
+    @IBOutlet weak var bookTitle: UILabel!
+    @IBOutlet weak var bookAuthor: UILabel!
+
+}
+
 class SearchViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Book Searcher"
         
         searchBar.delegate = self
     }
@@ -28,9 +42,11 @@ class SearchViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchViewCell", for: indexPath) as! SearchViewCell
 
-        // Configure the cell...
+        cell.bookTitle.text = "Title on the book #\(indexPath.row)"
+        cell.bookAuthor.text = "Author name #\(indexPath.row)"
+        // cell.bookThumbnail =
 
         return cell
     }

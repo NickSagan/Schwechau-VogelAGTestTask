@@ -21,7 +21,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="searchCell" id="61g-Kd-c6Y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="searchViewCell" id="61g-Kd-c6Y" customClass="SearchViewCell" customModule="Schwechau_Vo_gelAGTestTask" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="60.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="61g-Kd-c6Y" id="VUx-cz-NGa">
@@ -62,6 +62,11 @@
                                         <constraint firstItem="Spw-8d-oPM" firstAttribute="top" secondItem="VUx-cz-NGa" secondAttribute="top" constant="11" id="taw-73-2Sk"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookAuthor" destination="Mjh-qh-Ofv" id="EyS-vf-35w"/>
+                                    <outlet property="bookThumbnail" destination="4qC-ji-6qO" id="4ei-gn-PP8"/>
+                                    <outlet property="bookTitle" destination="Spw-8d-oPM" id="CqU-kW-ifY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
