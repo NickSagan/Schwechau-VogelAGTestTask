@@ -20,7 +20,7 @@ class SearchViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var bookSearchmanager = BookSearchManager()
-    var booksArray = [Book]()
+    var books = [Book]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +38,26 @@ class SearchViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return books.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchViewCell", for: indexPath) as! SearchViewCell
+        cell.bookTitle.text = books[indexPath.row].title
+        cell.bookAuthor.text = books[indexPath.row].author
+        
+        let thumbnailUrl = URL(string: "https://books.google.com/books/content?id=FmyBAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")
+        // books[indexPath.row].thumbnail
+        print(thumbnailUrl) // HTTPS!!!
 
-        cell.bookTitle.text = "Title on the book #\(indexPath.row)"
-        cell.bookAuthor.text = "Author name #\(indexPath.row)"
-        //cell.bookThumbnail.image = UIImage(named: ")
-
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: thumbnailUrl!) else { return }
+            DispatchQueue.main.async {
+                cell.bookThumbnail.image = UIImage(data: data)
+            }
+        }
+        
         return cell
     }
     
@@ -71,7 +81,10 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: BookSearchManagerDelegate {
     
     func updateBooksList(_ bookSearchManager: BookSearchManager, books: [Book]) {
-        //
+        
+        DispatchQueue.main.async {
+            self.books = books
+            self.tableView.reloadData()
+        }
     }
-    
 }
