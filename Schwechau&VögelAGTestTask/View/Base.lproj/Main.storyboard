@@ -92,63 +92,10 @@
                     <view key="view" contentMode="scaleToFill" id="MbF-iM-Seo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-SF-g20">
-                                <rect key="frame" x="20" y="108" width="130" height="180"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="QbZ-LK-LbY"/>
-                                    <constraint firstAttribute="height" constant="180" id="h4I-KJ-scm"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cry-fO-AEa">
-                                <rect key="frame" x="20" y="296" width="374" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Dn1-9X-ehS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5Z-xU-6PC">
-                                <rect key="frame" x="20" y="329.5" width="374" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2wy-6k-7Si"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VDb-Cs-hWA">
-                                <rect key="frame" x="20" y="367" width="294" height="286"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uFx-EA-auS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="VDb-Cs-hWA" firstAttribute="firstBaseline" secondItem="M5Z-xU-6PC" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="1ST-Cv-8jC"/>
-                            <constraint firstItem="VDb-Cs-hWA" firstAttribute="leading" secondItem="uFx-EA-auS" secondAttribute="leading" constant="20" id="3cr-tP-jEb"/>
-                            <constraint firstItem="M5Z-xU-6PC" firstAttribute="leading" secondItem="uFx-EA-auS" secondAttribute="leading" constant="20" id="H7q-eL-CVw"/>
-                            <constraint firstItem="cry-fO-AEa" firstAttribute="top" secondItem="kfc-SF-g20" secondAttribute="bottom" constant="8" symbolic="YES" id="L21-1M-EwE"/>
-                            <constraint firstItem="cry-fO-AEa" firstAttribute="leading" secondItem="uFx-EA-auS" secondAttribute="leading" constant="20" id="Ph9-V2-HZb"/>
-                            <constraint firstItem="uFx-EA-auS" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="M5Z-xU-6PC" secondAttribute="trailing" constant="20" id="QD5-4J-aIM"/>
-                            <constraint firstItem="uFx-EA-auS" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cry-fO-AEa" secondAttribute="trailing" constant="20" id="aen-EI-x2o"/>
-                            <constraint firstItem="kfc-SF-g20" firstAttribute="leading" secondItem="uFx-EA-auS" secondAttribute="leading" constant="20" id="frL-yQ-NJd"/>
-                            <constraint firstItem="kfc-SF-g20" firstAttribute="top" secondItem="uFx-EA-auS" secondAttribute="top" constant="20" id="g9g-2f-EDX"/>
-                            <constraint firstItem="M5Z-xU-6PC" firstAttribute="firstBaseline" secondItem="cry-fO-AEa" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="rCT-fN-yMz"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tkn-fd-s6Q"/>
-                    <connections>
-                        <outlet property="bookAuthor" destination="M5Z-xU-6PC" id="8Xa-gN-5OS"/>
-                        <outlet property="bookDescription" destination="VDb-Cs-hWA" id="wST-rS-uJu"/>
-                        <outlet property="bookTitle" destination="cry-fO-AEa" id="Mp4-nR-K6L"/>
-                        <outlet property="thumbnail" destination="kfc-SF-g20" id="XMS-63-ppT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIa-H0-pNz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
