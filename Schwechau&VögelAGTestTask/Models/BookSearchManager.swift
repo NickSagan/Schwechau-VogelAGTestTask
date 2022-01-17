@@ -29,7 +29,7 @@ struct BookSearchManager {
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, response, error in
-            if error != nil { print(error!); return }
+            if error != nil { print("Request fail: \(String(describing: error))"); return }
             guard let safeData = data else { return }
             guard let books = self.parseJSON(bookData: safeData) else { return }
             self.delegate?.updateBooksList(self, books: books)
@@ -48,15 +48,20 @@ struct BookSearchManager {
             var books = [Book]()
             for item in decodedData.items {
                 
-                let title = item.volumeInfo.title
+                let title = item.volumeInfo.title ?? "No title"
                 let author = item.volumeInfo.authors?[0] ?? "No author"
                 let description = item.volumeInfo.description ?? "No decription"
-                let thumbnail = item.volumeInfo.imageLinks.thumbnail.https()
+                let thumbnail = item.volumeInfo.imageLinks.thumbnail?.https() ?? ""
 
                 let book = Book(title: title, author: author, thumbnail: thumbnail, description: description)
                 print("JSON parsed")
                 books.append(book)
             }
+            
+            if books.isEmpty {
+                books.append(Book(title: "Nothing found", author: "Please try another request", thumbnail: "", description: ""))
+            }
+            
             return books
         } catch {
             print(error)
