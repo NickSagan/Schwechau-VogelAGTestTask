@@ -53,7 +53,10 @@ class SearchViewController: UITableViewController {
         DispatchQueue.global().async {
             guard let data = try? Data(contentsOf: thumbnailUrl!) else { return }
             DispatchQueue.main.async {
-                cell.bookThumbnail.image = UIImage(data: data)
+                guard let thumbmailImage = UIImage(data: data) else {return}
+                cell.bookThumbnail.image = thumbmailImage
+                Cache.cache.setObject(thumbmailImage, forKey: self.books[indexPath.row].thumbnail as NSString)
+                print("Image for indexPath.row: \(indexPath.row) cached")
             }
         }
         

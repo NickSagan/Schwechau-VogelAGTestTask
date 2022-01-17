@@ -41,6 +41,8 @@ class DetailViewController: UIViewController {
         self.view.addSubview(bookAuthor)
         self.view.addSubview(bookDescription)
         
+        //MARK: - Portrait Constraints Here
+        
         portraitConstraints = [
             thumbnail.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             thumbnail.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -59,6 +61,8 @@ class DetailViewController: UIViewController {
             bookDescription.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             bookDescription.topAnchor.constraint(equalTo: bookAuthor.bottomAnchor, constant: 20)
         ]
+        
+        //MARK: - Landscape Constraints Here
         
         landscapeConstraints = [
             thumbnail.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
@@ -99,11 +103,17 @@ class DetailViewController: UIViewController {
         bookAuthor.text = "Author: " + book.author
         bookDescription.text = "Description: " + book.description
         
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: URL(string: book.thumbnail)!) else { return }
-            DispatchQueue.main.async {
-                self.thumbnail.image = UIImage(data: data)
+        if let cachedImage = Cache.cache.object(forKey: book.thumbnail as NSString) {
+            thumbnail.image = cachedImage
+            print("Cached image used")
+        } else {
+            DispatchQueue.global().async {
+                guard let data = try? Data(contentsOf: URL(string: book.thumbnail)!) else { return }
+                DispatchQueue.main.async {
+                    self.thumbnail.image = UIImage(data: data)
+                }
             }
+            print("Fetched image used")
         }
     }
     
@@ -121,14 +131,14 @@ class DetailViewController: UIViewController {
          case .landscapeLeft:
              fallthrough
          case .landscapeRight:
-             print("landscape")
+             print("Landscape")
              NSLayoutConstraint.deactivate(portraitConstraints)
              NSLayoutConstraint.activate(landscapeConstraints)
 
          case .unknown:
-             print("unknown orientation")
+             print("Unknown orientation")
          @unknown default:
-             print("unknown case in orientation change")
+             print("Unknown case in orientation change")
          }
      }
     

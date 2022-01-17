@@ -17,6 +17,7 @@
 		9153E2F3279462E000E845EC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2F2279462E000E845EC /* Book.swift */; };
 		9153E2F5279467E500E845EC /* BookSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2F4279467E500E845EC /* BookSearchManager.swift */; };
 		9153E2FB27946FD100E845EC /* BooksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2FA27946FD100E845EC /* BooksData.swift */; };
+		9153E2FD279554FD00E845EC /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E2FC279554FD00E845EC /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9153E2F2279462E000E845EC /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		9153E2F4279467E500E845EC /* BookSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchManager.swift; sourceTree = "<group>"; };
 		9153E2FA27946FD100E845EC /* BooksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksData.swift; sourceTree = "<group>"; };
+		9153E2FC279554FD00E845EC /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				9153E2F4279467E500E845EC /* BookSearchManager.swift */,
 				9153E2F2279462E000E845EC /* Book.swift */,
 				9153E2FA27946FD100E845EC /* BooksData.swift */,
+				9153E2FC279554FD00E845EC /* Cache.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				9153E2ED27944B9E00E845EC /* SearchViewController.swift in Sources */,
 				9153E2D92794458400E845EC /* AppDelegate.swift in Sources */,
+				9153E2FD279554FD00E845EC /* Cache.swift in Sources */,
 				9153E2DB2794458400E845EC /* SceneDelegate.swift in Sources */,
 				9153E2FB27946FD100E845EC /* BooksData.swift in Sources */,
 				9153E2F3279462E000E845EC /* Book.swift in Sources */,
