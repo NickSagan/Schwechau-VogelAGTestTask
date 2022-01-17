@@ -16,6 +16,8 @@ struct BookSearchManager {
     var delegate: BookSearchManagerDelegate?
     private let googleapisUrl = "https://www.googleapis.com/books/v1/volumes?q="
     
+    //MARK: - Fetch Data From Googleapis
+    
     func fetch(bookName: String) {
         let urlString = googleapisUrl + bookName.noSpaces()
         print("Fetching: \(urlString)")
@@ -37,6 +39,8 @@ struct BookSearchManager {
         print("Request performed")
     }
     
+    //MARK: - JSON Parsing
+    
     private func parseJSON(bookData: Data) -> [Book]? {
         let decoder = JSONDecoder()
         do {
@@ -50,7 +54,7 @@ struct BookSearchManager {
                 let thumbnail = item.volumeInfo.imageLinks.thumbnail.https()
 
                 let book = Book(title: title, author: author, thumbnail: thumbnail, description: description)
-                print("JSON parsed: \(books)")
+                print("JSON parsed")
                 books.append(book)
             }
             return books

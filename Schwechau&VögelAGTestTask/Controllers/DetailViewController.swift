@@ -103,6 +103,8 @@ class DetailViewController: UIViewController {
         bookAuthor.text = "Author: " + book.author
         bookDescription.text = "Description: " + book.description
         
+        //MARK: - Display Cached Image Priority
+        
         if let cachedImage = Cache.cache.object(forKey: book.thumbnail as NSString) {
             thumbnail.image = cachedImage
             print("Cached image used")
@@ -116,6 +118,8 @@ class DetailViewController: UIViewController {
             print("Fetched image used")
         }
     }
+    
+    //MARK: - Change Layout According To Device Orientation
     
     @objc func orientationChanged(notification: NSNotification) {
          let deviceOrientation = UIApplication.shared.statusBarOrientation

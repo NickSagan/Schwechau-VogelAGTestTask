@@ -49,17 +49,24 @@ class SearchViewController: UITableViewController {
         
         let thumbnailUrl = URL(string: books[indexPath.row].thumbnail)
         print(thumbnailUrl ?? "thumbnailUrl problem") // HTTPS!!!
-
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: thumbnailUrl!) else { return }
-            DispatchQueue.main.async {
-                guard let thumbmailImage = UIImage(data: data) else {return}
-                cell.bookThumbnail.image = thumbmailImage
-                Cache.cache.setObject(thumbmailImage, forKey: self.books[indexPath.row].thumbnail as NSString)
-                print("Image for indexPath.row: \(indexPath.row) cached")
+        
+        //MARK: - Display Cached Image Priority (It Improves User Experience While Scrolling)
+        
+        if let cachedImage = Cache.cache.object(forKey: self.books[indexPath.row].thumbnail as NSString) {
+            cell.bookThumbnail.image = cachedImage
+            print("Cached image used")
+        } else {
+            DispatchQueue.global().async {
+                guard let data = try? Data(contentsOf: thumbnailUrl!) else { return }
+                DispatchQueue.main.async {
+                    guard let thumbmailImage = UIImage(data: data) else {return}
+                    cell.bookThumbnail.image = thumbmailImage
+                    print("Fetched image used")
+                    Cache.cache.setObject(thumbmailImage, forKey: self.books[indexPath.row].thumbnail as NSString)
+                    print("Image for indexPath.row: \(indexPath.row) cached")
+                }
             }
         }
-        
         return cell
     }
     
