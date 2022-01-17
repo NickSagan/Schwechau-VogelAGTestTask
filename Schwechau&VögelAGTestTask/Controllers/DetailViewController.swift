@@ -45,15 +45,15 @@ class DetailViewController: UIViewController {
             thumbnail.heightAnchor.constraint(equalToConstant: 200),
             
             bookTitle.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            bookTitle.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 20),
+            bookTitle.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             bookTitle.topAnchor.constraint(equalTo: thumbnail.bottomAnchor, constant: 20),
             
             bookAuthor.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            bookAuthor.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 20),
+            bookAuthor.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             bookAuthor.topAnchor.constraint(equalTo: bookTitle.bottomAnchor, constant: 20),
             
             bookDescription.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            bookDescription.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 20),
+            bookDescription.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             bookDescription.topAnchor.constraint(equalTo: bookAuthor.bottomAnchor, constant: 20)
         ])
         
