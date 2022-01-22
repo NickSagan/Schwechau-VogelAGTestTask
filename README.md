@@ -22,7 +22,7 @@ Deadline: 2 days from today."
 # This project contains
 
 * UIKit, URLSession, JSONDecoder, NSCache, UISearchBarDelegate, UITableViewController, NotificationCenter, NSLayoutConstraint, GCD
-* It was very interesting to find out what huge opportunities the API gives and how many different data can be loaded
+* It was interesting to work with googleapis
 
 # How to use the app
 
